@@ -1,0 +1,345 @@
+<div class="row-layout frame-43">
+  <div class="column-layout frame-42">
+    <igx-input-group type="border" class="input">
+      <igx-prefix>
+        <igx-icon class="icon-1">
+          search
+        </igx-icon>
+      </igx-prefix>
+      <input (keyup.enter)="onSearchClicked(searchInput.value)" #searchInput type="text" placeholder="" igxInput [(ngModel)]="searchText" />
+    
+    <!-- (keyup)="onSearchClicked(searchInput.value)" #searchInput -->
+    
+    </igx-input-group>
+    <div class="row-layout frame-41">
+      <igx-chip class="chip-3">
+        Stocks
+      </igx-chip>
+      <igx-chip class="chip-3">
+        ETFs
+      </igx-chip>
+      <igx-chip class="chip-3">
+        Crypto
+      </igx-chip>
+      <igx-chip class="chip-3">
+        Futures
+      </igx-chip>
+    </div>
+    <div class="column-layout list-scroll">
+
+      <igx-list class="list">
+        <igx-list-item
+          [isHeader]="false" *ngFor="let item of filteredStockSymbolData"
+          (click)="onItemClicked(item)"
+          [ngClass]="item.selected ? 'selected' : ''" #item
+          igxRipple
+          igxRippleTarget=".igx-list__item-content">
+          <span igxListLineTitle>{{ item.stock_symbol }}</span>
+          <span igxListLineSubTitle>{{ item.stock_name }}</span>
+          <span igxListAction>
+            <igx-icon [routerLink]="['/dashboardview/']" [queryParams]="{ stockSymbol: selectedItem.stock_symbol }" class="icon">
+              assessment
+            </igx-icon>
+          </span>
+        </igx-list-item>
+      </igx-list>
+
+    </div>
+  </div>
+  <div *ngIf="selectedItem"  class="row-layout group">
+    <div class="column-layout frame-40">
+      <div class="row-layout frame-26">
+        <div class="column-layout frame-25">
+          <div class="column-layout frame-24">
+            <div class="row-layout frame-23">
+              <p class="ig-typography__overline content">
+                {{ selectedItem.stock_symbol }}
+              </p>
+              <p class="ig-typography__caption text">
+                ∙
+              </p>
+              <p class="ig-typography__overline content">
+                {{ selectedItem.stock_market }}              </p>
+            </div>
+            <h5 class="content">
+              {{ selectedItem.stock_name }}
+            </h5>
+          </div>
+          <div class="row-layout frame-22">
+            <h3 class="content">
+              {{ selectedItem.previous_close }}
+            </h3>
+          </div>
+          <div class="column-layout frame-24">
+            <div class="row-layout frame-19">
+              <p class="content">
+                {{ selectedItem.stock_sector }}
+              </p>
+            </div>
+            <div class="row-layout frame-18">
+              <p class="ig-typography__body-2 content">
+                {{ selectedItem.stock_industry }}
+              </p>
+              <p class="ig-typography__caption content">
+                
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row-layout frame-17">
+          <div class="column-layout frame-16">
+            <div class="row-layout frame-14">
+              <p class="ig-typography__caption subtitle-12">
+                PREVIOUS CLOSE
+              </p>
+              <p class="ig-typography__caption subtitle-13">
+                {{ selectedItem.previous_close }}
+              </p>
+            </div>
+            <div class="row-layout frame-14">
+              <p class="ig-typography__caption subtitle-12">
+                DAY RANGE
+              </p>
+              <p class="ig-typography__caption subtitle-13">
+                {{ selectedItem.day_range }}
+              </p>
+            </div>
+            <div class="row-layout frame-14">
+              <p class="ig-typography__caption subtitle-12">
+                YEAR RANGE
+              </p>
+              <p class="ig-typography__caption subtitle-13">
+                {{ selectedItem.year_range }}
+              </p>
+            </div>
+            <div class="row-layout frame-14">
+              <p class="ig-typography__caption subtitle-12">
+                MARKET CAP
+              </p>
+              <p class="ig-typography__caption subtitle-13">
+                {{ selectedItem.stock_market_cap }}
+              </p>
+            </div>
+          </div>
+          <div class="column-layout frame-16">
+            <div class="row-layout frame-14">
+              <p class="ig-typography__caption subtitle-12">
+                AVG VOLUME
+              </p>
+              <p class="ig-typography__caption subtitle-13">
+                {{ selectedItem.avg_volume }}
+              </p>
+            </div>
+            <div class="row-layout frame-14">
+              <p class="ig-typography__caption subtitle-12">
+                P/E RATIO
+              </p>
+              <p class="ig-typography__caption subtitle-13">
+                {{ selectedItem.pe_ratio }}
+              </p>
+            </div>
+            <div class="row-layout frame-14">
+              <p class="ig-typography__caption subtitle-12">
+                DIVIDEND
+              </p>
+              <p class="ig-typography__caption subtitle-13">
+                {{ selectedItem.dividend_yield }}
+              </p>
+            </div>
+            <div class="row-layout frame-14">
+              <p class="ig-typography__caption subtitle-12">
+                EXCHANGE
+              </p>
+              <p class="ig-typography__caption subtitle-13">
+                {{ selectedItem.stock_market }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column-layout frame-6">
+   
+        <div class="category-chart chart">
+          <igx-financial-chart #chart
+            [dataSource]="dataSource"
+            height="100%" width="100%"
+            chartType="Candle"
+            zoomSliderType="None"
+            subtitle=""
+            subtitleTopMargin="10"
+            isWindowSyncedToVisibleRange="true">
+          </igx-financial-chart>
+      </div>
+
+      </div>
+      <div class="row-layout frame-39">
+        <div class="column-layout stocks-2">
+          <div class="column-layout frame-23">
+            <p class="ig-typography__body-2 apple-inc">
+              Apple Inc.
+            </p>
+            <h6 class="content">
+              $165.02
+            </h6>
+          </div>
+          <div class="row-layout frame-34">
+            <p class="ig-typography__subtitle-2 aapl">
+              AAPL
+            </p>
+            <div class="row-layout frame-33">
+              <p class="ig-typography__subtitle-2 content">
+                -1.12%
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="column-layout stocks-2">
+          <div class="column-layout frame-23">
+            <p class="ig-typography__body-2 apple-inc">
+              Tesla Inc.
+            </p>
+            <h6 class="content">
+              $165.08
+            </h6>
+          </div>
+          <div class="row-layout frame-34">
+            <p class="ig-typography__subtitle-2 aapl">
+              TSLA
+            </p>
+            <div class="row-layout frame-37">
+              <p class="ig-typography__subtitle-2 content">
+                +1.28%
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="column-layout stocks-2">
+          <div class="column-layout frame-23">
+            <p class="ig-typography__body-2 apple-inc">
+              Microsoft Corp
+            </p>
+            <h6 class="content">
+              $285.76
+            </h6>
+          </div>
+          <div class="row-layout frame-34">
+            <p class="ig-typography__subtitle-2 aapl">
+              MSFT
+            </p>
+            <div class="row-layout frame-33">
+              <p class="ig-typography__subtitle-2 content">
+                -0.12%
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="column-layout stocks-2">
+          <div class="column-layout frame-23">
+            <p class="ig-typography__body-2 apple-inc">
+              Alphabet Inc Class A
+            </p>
+            <h6 class="content">
+              $105.41
+            </h6>
+          </div>
+          <div class="row-layout frame-34">
+            <p class="ig-typography__subtitle-2 aapl">
+              GOOGL
+            </p>
+            <div class="row-layout frame-37">
+              <p class="ig-typography__subtitle-2 content">
+                +0.11%
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column-layout frame-5">
+      <div class="column-layout frame-4">
+        <div class="column-layout frame-3">
+          <div class="column-layout frame-2">
+            <div class="row-layout frame-2">
+
+              <button igxButton="raised" [routerLink]="['/dashboardview']" [queryParams]="{ stockSymbol: selectedItem.stock_symbol }" igxRipple  class="button">
+                <igx-icon>
+                  assessment
+                </igx-icon>
+                <span>Analyze</span>
+              </button>
+
+              <!-- <button igxButton="raised" igxRipple [igxToggleAction]="dialog" class="button">
+                BUY 100 {{ selectedItem.stock_symbol }}  @MKT
+              </button> -->
+
+              <button igxButton="raised" igxRipple [igxToggleAction]="dialog" class="button-1">
+                SELL 100 {{ selectedItem.stock_symbol }} @MKT
+              </button>
+            </div>
+            <div class="row-layout frame-2">
+              <button igxButton="raised" igxRipple [igxToggleAction]="dialog" class="button">
+                BUY 100 {{ selectedItem.stock_symbol }}  @BID
+              </button>
+              <button igxButton="raised" igxRipple [igxToggleAction]="dialog" class="button-1">
+                SELL 100 {{ selectedItem.stock_symbol }} @BID
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column-layout positions-1">
+        <p class="content">
+          POSITIONS
+        </p>
+        <igx-grid [data]="finTech75Positions" primaryKey="id" displayDensity="cosy" [moving]="true" [allowFiltering]="true" filterMode="excelStyleFilter" class="grid">
+          <igx-column field="id" dataType="number" header="id" [hidden]="true" [groupable]="true" [sortable]="true" [resizable]="true" [hasSummary]="true" [selectable]="false"></igx-column>
+          <igx-column field="category" dataType="string" header="Category" width="110px" [groupable]="true" [sortable]="true" [resizable]="true" [hasSummary]="true" [selectable]="false"></igx-column>
+          <igx-column field="type" dataType="string" header="Type" width="106px" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+          <igx-column field="price" dataType="currency" header="Price" width="98px" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+          <!-- <igx-column field="changeP" dataType="number" header="Change %" width="112px" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column> -->
+          
+          <igx-column field="changeP" [width]="'40px'" [resizable]="true" [filterable]="false" dataType="number" [headerClasses]="'headerAlignSyle'">
+            <ng-template igxHeader>
+                <span></span>
+            </ng-template>
+
+            <ng-template igxCell let-val>
+                <div class="currency-badge-container">
+                    <igx-badge *ngIf="val > 0" type="success" position="bottom-right" icon="arrow_upward"
+                        class="badge-left"></igx-badge>
+                    <igx-badge *ngIf="val < 0" type="error" position="bottom-right" icon="arrow_downward"
+                        class="error badge-left"></igx-badge>
+                    <span class="cellAlignSyle" [class.up]="val > 0" [class.down]="val < 0"></span>
+                </div>
+            </ng-template>
+        </igx-column>
+          
+          <igx-column field="contract" dataType="string" header="Contract" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+          <igx-column field="settlement" dataType="string" header="Settlement" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+          <igx-column field="country" dataType="string" header="Country" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+          <igx-column field="region" dataType="string" header="Region" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+          <igx-column field="LastUpdate" dataType="string" header="Last Update" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+          <igx-column field="openPrice" dataType="currency" header="Open Price" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+          <igx-column field="change" dataType="currency" header="Change" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+          <igx-column field="buy" dataType="currency" header="Buy" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+          <igx-column field="sell" dataType="number" header="Sell" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+        </igx-grid>
+      </div>
+    </div>
+  </div>
+  <igx-dialog [closeOnOutsideSelect]="true" [closeOnEscape]="true" #dialog>
+    <igx-dialog-title>
+      <h5>
+        Confirmation
+      </h5>
+    </igx-dialog-title>
+    <ng-container>
+      <p>Are you sure you want to do this?</p>
+    </ng-container>
+    <igx-dialog-actions>
+      <button igxButton="flat" igxRipple [igxToggleAction]="dialog">Cancel</button>
+      <button igxButton="flat" igxRipple [igxToggleAction]="dialog">OK</button>
+    </igx-dialog-actions>
+  </igx-dialog>
+  <!-- <igx-toast #toast class="notification-toast" [displayTime]="2000"></igx-toast> -->
+</div>

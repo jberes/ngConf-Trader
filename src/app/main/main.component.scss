@@ -1,0 +1,379 @@
+:host {
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+}
+.row-layout {
+  display: flex;
+}
+.frame-43 {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+  gap: 32px;
+  position: relative;
+  padding: 32px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.column-layout {
+  display: flex;
+  flex-direction: column;
+}
+.frame-42 {
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 16px;
+  position: relative;
+  width: 320px;
+  flex-shrink: 0;
+}
+.frame-41 {
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+  gap: 12px;
+  position: relative;
+  padding: 10px;
+  align-self: stretch;
+  flex-shrink: 0;
+}
+.list-scroll {
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  overflow: auto;
+  position: relative;
+  align-self: stretch;
+  flex-grow: 1;
+  flex-basis: 0px;
+}
+.group {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+  gap: 32px;
+  position: relative;
+  min-height: 50px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.frame-40 {
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 40px;
+  position: relative;
+  min-width: 850px;
+  flex-grow: 2;
+  flex-basis: 0;
+}
+.frame-26 {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: stretch;
+  gap: 24px;
+  position: relative;
+  align-self: stretch;
+  flex-shrink: 0;
+}
+.frame-25 {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 8px;
+  position: relative;
+  flex-grow: 1;
+  flex-basis: 0px;
+}
+.frame-24 {
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  position: relative;
+}
+.frame-23 {
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 4px;
+  position: relative;
+}
+.frame-22 {
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  gap: 10px;
+  position: relative;
+}
+.frame-19 {
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  gap: 8px;
+  position: relative;
+}
+.frame-18 {
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  gap: 4px;
+  position: relative;
+}
+.frame-17 {
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 24px;
+  position: relative;
+  align-self: stretch;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.frame-16 {
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  position: relative;
+  align-self: stretch;
+  flex-grow: 1;
+  flex-basis: 0px;
+}
+.frame-14 {
+  border-color: rgba(255, 255, 255, 0.10000000149011612);
+  border-width: 1px;
+  border-style: solid;
+  justify-content: space-between;
+  align-items: center;
+  align-content: flex-start;
+  position: relative;
+  padding: 10px 16px;
+  align-self: stretch;
+  flex-grow: 1;
+  flex-basis: 0px;
+}
+.frame-6 {
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+  gap: 10px;
+  position: relative;
+  align-self: stretch;
+  flex-grow: 1;
+  flex-basis: 0px;
+}
+.frame-39 {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: stretch;
+  gap: 16px;
+  position: relative;
+  align-self: stretch;
+  flex-shrink: 0;
+}
+.stocks-2 {
+  background-color: rgba(255, 255, 255, 0.05000000074505806);
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 16px;
+  overflow: hidden;
+  position: relative;
+  padding: 18px 16px;
+  min-width: min-content;
+  flex-grow: 1;
+  flex-basis: 0px;
+}
+.frame-34 {
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  gap: 10px;
+  position: relative;
+  align-self: stretch;
+  flex-shrink: 0;
+}
+.frame-33 {
+  background-color: hsla(var(--ig-error-500));
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 10px;
+  position: relative;
+  padding: 2px 8px;
+}
+.frame-37 {
+  background-color: hsla(var(--ig-success-500));
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 10px;
+  position: relative;
+  padding: 2px 8px;
+}
+.frame-5 {
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 40px;
+  position: relative;
+  min-width: 450px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.frame-4 {
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 24px;
+  position: relative;
+  align-self: stretch;
+  flex-shrink: 0;
+}
+.frame-3 {
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 24px;
+  position: relative;
+  min-width: 250px;
+  align-self: stretch;
+  flex-shrink: 0;
+}
+.frame-2 {
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 16px;
+  position: relative;
+  align-self: stretch;
+  flex-shrink: 0;
+}
+.positions-1 {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 16px;
+  position: relative;
+  align-self: stretch;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.input {
+  position: relative;
+  height: max-content;
+  align-self: stretch;
+}
+.button {
+  --igx-button-foreground: #FFFFFFFF;
+  --igx-button-background: hsla(var(--ig-success-500));
+  position: relative;
+  height: max-content;
+  flex-grow: 1;
+  flex-basis: 0px;
+}
+.button-1 {
+  --igx-button-foreground: #FFFFFFFF;
+  --igx-button-background: hsla(var(--ig-error-500));
+  position: relative;
+  height: max-content;
+  flex-grow: 1;
+  flex-basis: 0px;
+}
+.icon-1 {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  color: hsla(var(--ig-gray-700));
+  position: relative;
+}
+.chip-3 {
+  position: relative;
+  height: max-content;
+}
+.icon {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  color: hsla(var(--ig-gray-700));
+}
+.content {
+  color: #FFFFFFFF;
+  position: relative;
+}
+.text {
+  color: #FFFFFFB2;
+  position: relative;
+}
+.subtitle-12 {
+  color: hsla(var(--ig-gray-400));
+  position: relative;
+}
+.subtitle-13 {
+  text-align: center;
+  color: #FFFFFFFF;
+  position: relative;
+}
+.apple-inc {
+  color: hsla(var(--ig-gray-500));
+  position: relative;
+}
+.aapl {
+  color: #FFFFFFFF;
+  position: relative;
+  flex-grow: 1;
+  flex-basis: 0px;
+}
+.list {
+  position: relative;
+  align-self: stretch;
+}
+.grid {
+  min-height: 300px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.category-chart {
+  position: relative;
+  min-height: 250px;
+  align-self: stretch;
+  flex-grow: 1;
+  flex-basis: 0px;
+}
+.cellAlignSyle {
+  text-align: right;
+  float:right;
+}
+.cellAlignSyle > span {
+  float:right;
+}
+.up {
+  color: green;
+}
+.down {
+  color: red;
+}
+.headerAlignSyle {
+  text-align: right !important;
+}
+
+.currency-badge-container {
+  width: 80px;
+  float: right;
+}
+
+.badge-left {
+  float: left;
+}
+.selected {
+  background-color: green;
+}
+.notification-toast {
+  margin-bottom: 36px;
+}

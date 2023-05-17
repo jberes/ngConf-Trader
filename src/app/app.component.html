@@ -1,0 +1,81 @@
+<div class="column-layout trader-app-v">
+  <igx-navbar class="navbar">
+    <igx-navbar-action>
+      <igx-icon class="icon-8">
+        menu
+      </igx-icon>
+    </igx-navbar-action>
+    <igx-navbar-title class="navbar-content">
+      <h6 class="h6">
+        Trade App
+      </h6>
+    </igx-navbar-title>
+    <igx-icon class="icon-10">
+      account_circle
+    </igx-icon>
+    <igx-icon class="icon-10">
+      notifications
+    </igx-icon>
+    <igx-icon class="icon-10">
+      settings
+    </igx-icon>
+    <igx-icon class="icon-10">
+      more_vert
+    </igx-icon>
+  </igx-navbar>
+  <div class="row-layout group">
+    <igx-nav-drawer [pin]="true" [pinThreshold]="1024" width="68px" class="nav-drawer">
+      <ng-template igxDrawerMini>
+        <div igxDrawerItem igxRipple routerLink="/main" class="nav-drawer-item">
+          <igx-icon class="icon">
+            dashboard
+          </igx-icon>
+        </div>
+        <div igxDrawerItem igxRipple routerLink="/dashboards" class="nav-drawer-item">
+          <igx-icon class="icon-2">
+            poll
+          </igx-icon>
+        </div>
+        <div igxDrawerItem igxRipple routerLink="/fdc3playground" class="nav-drawer-item">
+          <igx-icon class="icon">
+            history
+          </igx-icon>
+        </div>
+        <div igxDrawerItem igxRipple routerLink="/fintechfeed" class="nav-drawer-item">
+          <igx-icon class="icon">
+            trending_up
+          </igx-icon>
+        </div>
+      </ng-template>
+      <ng-template igxDrawer>
+        <div igxDrawerItem igxRipple class="nav-drawer-item">
+          <igx-icon class="icon">
+            dashboard
+          </igx-icon>
+          <span>Title goes here</span>
+        </div>
+        <div igxDrawerItem igxRipple class="nav-drawer-item">
+          <igx-icon class="icon-5">
+            poll
+          </igx-icon>
+          <span>Title goes here</span>
+        </div>
+        <div igxDrawerItem igxRipple class="nav-drawer-item">
+          <igx-icon class="icon">
+            history
+          </igx-icon>
+          <span>Title goes here</span>
+        </div>
+        <div igxDrawerItem igxRipple class="nav-drawer-item">
+          <igx-icon class="icon">
+            trending_up
+          </igx-icon>
+          <span>Title goes here</span>
+        </div>
+      </ng-template>
+    </igx-nav-drawer>
+    <div class="view-container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
