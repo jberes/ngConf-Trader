@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
-import { IgxInputGroupModule, IgxIconModule, IgxChipsModule, IgxListModule, IgxButtonModule, IgxRippleModule, IgxToggleModule, IgxGridModule, IgxDialogModule, IgxCardModule, IgxAvatarModule, IgxActionStripModule, IgxNavbarModule, IgxNavigationDrawerModule } from 'igniteui-angular';
+import { IgxInputGroupModule, IgxIconModule, IgxChipsModule, IgxListModule, IgxButtonModule, IgxRippleModule, IgxToggleModule, IgxGridModule, IgxDialogModule, IgxCardModule, IgxAvatarModule, IgxActionStripModule, IgxNavbarModule, IgxNavigationDrawerModule, IgxBadgeComponent } from 'igniteui-angular';
 import { IgxCategoryChartModule, IgxFinancialChartModule } from 'igniteui-angular-charts';
 import { FormsModule } from '@angular/forms';
 import { DashboardsComponent } from './dashboards/dashboards.component';
@@ -36,6 +36,7 @@ import { HttpClientModule } from '@angular/common/http';
     IgxRippleModule,
     IgxToggleModule,
     IgxGridModule,
+    IgxBadgeComponent,
     IgxDialogModule,
     FormsModule,
     IgxCardModule,
