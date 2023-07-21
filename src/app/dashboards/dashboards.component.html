@@ -2,7 +2,7 @@
   <igx-card type="outlined" *ngFor="let item of dashboardsListDashboards" routerLink="/dashboardview" class="card">
     <igx-card-header>
       <div igxCardThumbnail>
-        <igx-avatar [src]="item.AddedByImageUrl" [roundShape]="true" class="avatar"></igx-avatar>
+        <igx-avatar [src]="item.AddedByImageUrl" shape="circle" class="avatar"></igx-avatar>
       </div>
       <h3 igxCardHeaderTitle>
         {{ item.Title }}
@@ -15,20 +15,20 @@
       <img [src]="item.ThumbnailURL" class="image" />
     </igx-card-media>
     <igx-card-actions class="actions-content">
-      <button igxButton="raised" igxRipple routerLink="/dashboardview/{{ item.Title }}"  class="button">
+      <button igxButton="raised" igxRipple routerLink="/dashboardview/{{ item.Title }}"  class="button" igxStart>
         Open
       </button>
-      <button igxButton="icon" igxRipple>
+      <button igxButton="icon" igxRipple igxEnd>
         <igx-icon>
           favorite
         </igx-icon>
       </button>
-      <button igxButton="icon" igxRipple>
+      <button igxButton="icon" igxRipple igxEnd>
         <igx-icon>
           bookmark
         </igx-icon>
       </button>
-      <button igxButton="icon" igxRipple>
+      <button igxButton="icon" igxRipple igxEnd>
         <igx-icon>
           share
         </igx-icon>
